@@ -1,188 +1,77 @@
-# 宋浩风格高等数学 Skill · song-hao-math
+# 宋浩风格数学 Skill · song-hao-math
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![Skill](https://img.shields.io/badge/Grok%20%2F%20Claude%20%2F%20Cursor-Skill-00DC82)](#安装)
-[![Math](https://img.shields.io/badge/考研数学-数一%20%7C%20数二%20%7C%20数三-blue)](#覆盖科目)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/tong666-bit/song-hao-math)
+口语化、分步板书、先直觉后公式，辅导本科高数、线代、概率统计与复变课程，也可按大纲适配考研数学一/二/三。
 
-> **把会讲课的数学老师，装进你的 AI。**  
-> 口语化 · 板书式推导 · 先直觉后公式 · 专治「公式会背题不会做」
+**非宋浩本人或官方出品。**教学组织与自编例题服务理解，不把没有出处的话术称作老师原话。
 
-**非官方致敬作品**：蒸馏公开教学中常见的通俗讲法与课堂节奏，**不是宋浩老师本人或官方出品**。
+## 2026-10-09 更新
 
----
+- 新增15个完整自编例题，包含识别、板书、结果、复核和关键变式。
+- 为微积分、线代、概率统计、复变补充适用条件、参数和边界检查。
+- 新增最小反例与错因诊断：等价相减、洛必达失败、重根对角化、不相关/独立、解析域/围道等。
+- 新增可执行的复习计划与时间预算。
+- 整理[公开课程与官方入口](references/sources.md)，标明核验范围。
+- 澄清复变作为独立课程/专业课，不自动列入统考数一；当年考纲需另核验。
 
-## 为什么会 Star？
+## 讲题示意（自编）
 
-| 痛点 | 这个 Skill 怎么治 |
-|------|-------------------|
-| AI 直接甩答案，过程像天书 | **板书式分步**，每步写清「为什么」 |
-| 只记公式，没有几何直觉 | **先图像 / 人话，再严格定义** |
-| 考研题型多，没有套路 | 每题附 **题型卡片**（识别 → 步骤 → 易错 → 变式） |
-| 高数线代概率复变切换懵 | **分科 reference 按需加载**，体系完整 |
+“别慌，这里不是把两个函数都换成x就完事。它们的一阶项相减没了，咱们要看三阶项。写出来，你就知道为什么极限是二分之一。”
 
-适合：**本科高数、考研数学一/二/三、复变入门、考前抢分复盘**。
-
----
-
-## 30 秒感受差异
-
-**普通 AI：**
-
-> 由洛必达法则，原式 \(=\lim\dfrac{f'}{g'}=1\)。
-
-**启用 song-hao-math 后（风格示意）：**
-
-> 别慌，这是 **0/0 型**。  
-> 你就想：分子分母一起趋于 0，比的是「谁变快」——洛必达用导数比速度。  
-> **注意**：先确认是 0/0 或 ∞/∞，且导数极限存在，才能下结论。  
-> 板书：……（逐步）  
-> **易错点**：等价无穷小用在「相减抵消」时可能翻车。  
-> **考研卡片**：未定式 → 化型 → 等价/洛必达/展开 → 回代。
-
----
-
-## 覆盖科目
-
-```text
-高等数学 / 微积分    极限·导数·中值·Taylor·积分·ODE·多元·重积分·级数
-线性代数            行列式·矩阵·秩·方程组·特征值·相似·二次型
-概率论与数理统计    事件·分布·期望方差·CLT·估计检验
-复变函数            解析·CR·Cauchy·Laurent·奇点·留数
-考研综合            数一/数二/数三题型打法与得分策略
-```
-
----
+公式之外，同时讲**为什么选这个方法、条件够不够、改一个条件还成立吗**。
 
 ## 安装
 
-### 方式一：Grok Build / Grok CLI
+Claude Code：
 
-```bash
-# 克隆到你的 skills 目录
-git clone https://github.com/tong666-bit/song-hao-math.git
-
-# 用户级（全局可用）
-# Windows: %USERPROFILE%\.grok\skills\song-hao-math
-# macOS/Linux: ~/.grok/skills/song-hao-math
-```
-
-把本仓库内容放到：
-
-```text
-~/.grok/skills/song-hao-math/
-  SKILL.md
-  references/
-```
-
-或在项目内：
-
-```text
-你的项目/.grok/skills/song-hao-math/
-```
-
-重启或等待 skills 自动热加载后，使用：
-
-- 斜杠命令：`/song-hao-math`
-- 或直接说：「用宋浩老师的方式讲这道极限题」
-
-### 方式二：Claude Code / Codex / 兼容 Agent Skills 的工具
-
-将本仓库作为 skill 目录安装（保证存在 `SKILL.md`）：
-
+**macOS / Linux**
 ```bash
 git clone https://github.com/tong666-bit/song-hao-math.git ~/.claude/skills/song-hao-math
 ```
 
-（路径按你使用的工具文档微调；**核心是 SKILL.md + references/**。）
-
-### 方式三：Cursor / 手动
-
-1. Clone 本仓库  
-2. 把 `SKILL.md` 内容加进项目规则 / Custom Skill  
-3. 需要分科深度时，让 AI 读取 `references/` 下对应文件  
-
----
-
-## 怎么用（复制即用）
-
-```text
-用宋浩风格讲：极限 lim(x→0) (tan x - sin x) / x^3，我是考研数二。
+**Windows PowerShell**
+```powershell
+git clone https://github.com/tong666-bit/song-hao-math.git "$env:USERPROFILE\.claude\skills\song-hao-math"
 ```
 
-```text
-/song-hao-math
-特征值到底在说矩阵的什么几何意义？再给一个 2×2 例子。
+**Windows CMD**
+```bat
+git clone https://github.com/tong666-bit/song-hao-math.git "%USERPROFILE%\.claude\skills\song-hao-math"
 ```
 
-```text
-这道线代证明我写到一半卡了：（粘贴过程）
-请按板书改错，并总结题型卡片。
-```
+其他支持 Agent Skills 的工具（如Codex或其它代理）按其当前文档选择skill目录，放入整个仓库，保留 `SKILL.md` 与 `references/`。Grok、Cursor等具体路径、热加载和斜杠命令取决于版本，本项目不将未经核实的路径写成通用安装规则。
+
+更新时，在安装目录执行 `git pull --ff-only`；有本地修改先保存并处理冲突，再重新打开会话。
+
+## 复制即用
 
 ```text
-留数定理为什么能拿来算实积分？用大白话 + 一个经典例题。
+用宋浩风格讲 lim(x→0)(tan x-sin x)/x^3，别跳步，解释为什么不能直接等价相减。
+我的参数方程组在除以t-1后出错了，请找第一处错误。
+重特征值为什么有时能对角化、有时不能？给两个2×2例子。
+我算出协方差0，能不能说独立？请核条件并给反例。
+留数算实积分时，怎么证明补上的半圆积分趋0？
+我是考研数二，每天120分钟，帮我安排8周复习并核对每天时间。
 ```
 
----
+更多示例见[examples/demo-prompts.md](examples/demo-prompts.md)。
 
-## 仓库结构
+## 资料导航
 
-```text
-song-hao-math/
-├── SKILL.md                          # 核心：触发条件 + 讲课协议
-├── README.md                         # 你正在看的说明
-├── LICENSE                           # MIT
-├── examples/
-│   └── demo-prompts.md               # 更多示例提问
-└── references/
-    ├── teaching-style.md             # 口吻与板书细则
-    ├── calculus.md                   # 高数 / 微积分
-    ├── linear-algebra.md             # 线性代数
-    ├── probability.md                # 概率统计
-    ├── complex-analysis.md           # 复变函数
-    └── kaoyan-playbook.md            # 考研题型与得分策略
-```
-
----
-
-## 设计理念
-
-1. **人话 → 图像 → 公式 → 板书 → 坑点 → 题型**  
-2. **禁止「显然」跳步**——学生卡住的地方正是要展开的地方  
-3. **分科 reference 渐进加载**——省 context，也更专业  
-4. **致敬而非冒充**——开源社区友好、可审计、可改进  
-
----
+| 任务 | 文件 |
+|---|---|
+| 高数/微积分 | [calculus.md](references/calculus.md) |
+| 线代 | [linear-algebra.md](references/linear-algebra.md) |
+| 概率统计 | [probability.md](references/probability.md) |
+| 复变 | [complex-analysis.md](references/complex-analysis.md) |
+| 教学节奏 | [teaching-style.md](references/teaching-style.md) |
+| 考研范围与题型 | [kaoyan-playbook.md](references/kaoyan-playbook.md) |
+| 完整板书例题 | [worked-examples.md](references/worked-examples.md) |
+| 错因与反例 | [error-diagnosis.md](references/error-diagnosis.md) |
+| 复习计划 | [study-plans.md](references/study-plans.md) |
+| 来源与核验限制 | [sources.md](references/sources.md) |
 
 ## 贡献
 
-欢迎 PR：
+欢迎附原题和来源提交勘误。新增定理写清假设、结论和边界；新增原创题标自编，真题记录科目/年份/版本，不只有题号。资料以链接、摘要和原创解释为主。
 
-- 补充真题题型卡片  
-- 纠错（笔误、条件遗漏）  
-- 增加「经济数学 / 工科应用」案例  
-- 改进触发 description，让更多学生在该用时自动命中  
-
-提 Issue 时尽量带：**科目 + 原题 + 你期望的讲法**。
-
----
-
-## 致谢与声明
-
-- 教学风格向**优秀高数公开课讲法**致敬，尤其是让无数同学「豁然开朗」的通俗路线  
-- **与宋浩老师无官方合作或授权关系**；若权利人希望调整命名或表述，请开 Issue，我们会积极响应  
-- 数学内容以教材与考研大纲为准；AI 可能出错，**考试与作业请以老师/教材为准**，重要推导建议人工复核  
-
----
-
-## License
-
-[MIT](./LICENSE) — 可自由使用、分享、改进；来都来了，**点个 Star** 让更多考研的朋友搜到它 ⭐
-
----
-
-<p align="center">
-  <b>公式会背 ≠ 题会做 · 会讲的 AI，才像老师</b><br/>
-  <sub>song-hao-math · 开源数学陪练</sub>
-</p>
+指令与原创内容采用[MIT](LICENSE)；第三方课程和教材遵守原有许可。本次确认公开资源目录，不代表已观看全部视频或核对当前考研学科大纲。
