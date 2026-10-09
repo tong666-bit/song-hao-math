@@ -1,5 +1,13 @@
 # 宋浩风格数学 Skill · song-hao-math
 
+![宋浩风格数学陪练：先直觉、再板书、核条件](assets/hero.svg)
+
+**公式会背，下一题也要会做。**面向大学数学与考研复习的中文 AI 陪练：把推导展开，把条件讲明，把错误定位到具体一步。
+
+[三分钟看板书示意](examples/showcase.md) · [安装](#安装) · [15个完整例题](references/worked-examples.md) · [版本下载](https://github.com/tong666-bit/song-hao-math/releases) · [反馈问题](https://github.com/tong666-bit/song-hao-math/issues)
+
+Chinese-language mathematics tutoring Agent Skill for calculus, linear algebra, probability, statistics and complex analysis, with step-by-step derivations, counterexamples and study plans.
+
 口语化、分步板书、先直觉后公式，辅导本科高数、线代、概率统计与复变课程，也可按大纲适配考研数学一/二/三。
 
 **非宋浩本人或官方出品。**教学组织与自编例题服务理解，不把没有出处的话术称作老师原话。
@@ -75,3 +83,9 @@ git clone https://github.com/tong666-bit/song-hao-math.git "%USERPROFILE%\.claud
 欢迎附原题和来源提交勘误。新增定理写清假设、结论和边界；新增原创题标自编，真题记录科目/年份/版本，不只有题号。资料以链接、摘要和原创解释为主。
 
 指令与原创内容采用[MIT](LICENSE)；第三方课程和教材遵守原有许可。本次确认公开资源目录，不代表已观看全部视频或核对当前考研学科大纲。
+
+## 一起学习
+
+也在备考四六级或考研英语？看看同作者的[刘晓艳风格英语陪练](https://github.com/tong666-bit/liu-xiaoyan-skill)：阅读证据、听力复盘、长难句、写译反馈与复习计划。
+
+如果一个例子让你弄懂了“为什么”，欢迎 **Star 收藏**，或把仓库链接分享给同学。遇到错误请带原题、条件和草稿提Issue，帮助我们把讲法修得更清楚。
